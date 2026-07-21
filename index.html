@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aswad Khan — Portfolio</title>
+
+    <meta
+      name="description"
+      content="Portfolio of Aswad Khan, a 10th-grade student at Anees Hassan School & College who is passionate about problem-solving and entrepreneurship."
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231D4ED8'/%3E%3Ctext x='50%25' y='56%25' font-size='26' text-anchor='middle' font-family='Arial' font-weight='700' fill='white'%3EAK%3C/text%3E%3C/svg%3E"
+    />
+
+    <style>
+      :root {
+        --primary: #1d4ed8;
+        --primary-dark: #1e3a8a;
+        --bg: #f4f8ff;
+        --surface: #ffffff;
+        --text: #1f2937;
+        --muted: #64748b;
+        --border: #d7e3f7;
+        --shadow: 0 18px 45px rgba(29, 78, 216, 0.08);
+        --radius: 22px;
+        --max: 760px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          sans-serif;
+
+        background:
+          radial-gradient(circle at top left, #dbeafe 0%, transparent 28%),
+          radial-gradient(circle at bottom right, #bfdbfe 0%, transparent 30%),
+          linear-gradient(180deg, #ffffff, #f8fafc);
+
+        color: #1f2937;
+      }
+
+      .container {
+        max-width: var(--max);
+        margin: auto;
+        padding: 0 24px;
+      }
+
+      header,
+      section,
+      footer {
+        padding: 80px 0;
+        position: relative;
+      }
+
+      section:nth-child(even) {
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(3px);
+      }
+
+      .section-label {
+        display: inline-block;
+
+        padding: 6px 14px;
+
+        border-radius: 999px;
+
+        background: rgba(29, 78, 216, 0.08);
+
+        color: var(--primary);
+
+        font-size: 0.72rem;
+
+        font-weight: 700;
+
+        letter-spacing: 0.18em;
+
+        text-transform: uppercase;
+
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+
+        color: var(--primary-dark);
+
+        line-height: 1.1;
+
+        margin: 18px 0;
+
+        font-weight: 800;
+      }
+
+      h1::after {
+        content: "";
+
+        display: block;
+
+        width: 110px;
+
+        height: 6px;
+
+        margin-top: 16px;
+
+        border-radius: 999px;
+
+        background: linear-gradient(90deg, #3b82f6, #60a5fa, transparent);
+      }
+
+      h2 {
+        font-size: 2rem;
+
+        font-weight: 800;
+
+        margin-bottom: 28px;
+
+        color: var(--primary-dark);
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .hero {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+
+        color: white;
+
+        font-weight: 800;
+
+        font-size: 2rem;
+
+        box-shadow:
+          0 15px 35px rgba(29, 78, 216, 0.3),
+          0 0 0 10px rgba(255, 255, 255, 0.7);
+      }
+
+      .hero p {
+        max-width: 620px;
+
+        color: var(--muted);
+
+        font-size: 17px;
+
+        margin-top: 8px;
+      }
+
+      .hero-chips {
+        margin-top: 28px;
+
+        display: flex;
+
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+      }
+
+      .chip {
+        background: white;
+
+        padding: 12px 18px;
+
+        border-radius: 999px;
+
+        border: 2px solid rgba(29, 78, 216, 0.12);
+
+        font-weight: 600;
+
+        box-shadow: var(--shadow);
+      }
+
+      .info-card {
+        background: rgba(255, 255, 255, 0.92);
+
+        border-radius: var(--radius);
+
+        padding: 28px;
+
+        box-shadow: var(--shadow);
+
+        border: 1px solid var(--border);
+      }
+
+      .info-item + .info-item {
+        margin-top: 22px;
+      }
+
+      .label {
+        display: block;
+
+        font-size: 0.85rem;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.12em;
+
+        font-weight: 700;
+
+        color: var(--primary);
+
+        margin-bottom: 6px;
+      }
+
+      .cards {
+        display: grid;
+
+        gap: 22px;
+      }
+
+      .proud-card {
+        position: relative;
+
+        background: white;
+
+        padding: 24px 24px 24px 70px;
+
+        border-radius: 18px;
+
+        border: 1px solid var(--border);
+
+        box-shadow: var(--shadow);
+
+        transition: 0.25s ease;
+
+        overflow: hidden;
+      }
+
+      .proud-card::before {
+        content: "✓";
+
+        position: absolute;
+
+        left: 22px;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        width: 34px;
+        height: 34px;
+
+        border-radius: 50%;
+
+        background: var(--primary);
+
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 700;
+      }
+
+      @media (hover: hover) {
+        .proud-card:hover {
+          transform: translateY(-6px);
+
+          box-shadow: 0 24px 40px rgba(29, 78, 216, 0.15);
+        }
+      }
+
+      .badges {
+        display: flex;
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+      }
+
+      .badge {
+        padding: 16px 24px;
+
+        border-radius: 999px;
+
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+        color: white;
+
+        font-weight: 700;
+
+        box-shadow: 0 10px 25px rgba(29, 78, 216, 0.25);
+
+        transition: 0.25s;
+      }
+
+      @media (hover: hover) {
+        .badge:hover {
+          transform: translateY(-4px) scale(1.03);
+        }
+      }
+
+      .quote {
+        position: relative;
+
+        padding: 40px;
+
+        border-radius: 26px;
+
+        background: white;
+
+        box-shadow: var(--shadow);
+
+        border: 1px solid var(--border);
+      }
+
+      .quote::before {
+        content: "“";
+
+        position: absolute;
+
+        top: 10px;
+        left: 20px;
+
+        font-size: 5rem;
+
+        color: rgba(29, 78, 216, 0.1);
+
+        font-weight: 800;
+      }
+
+      .quote p {
+        font-size: 18px;
+
+        position: relative;
+
+        z-index: 1;
+      }
+
+      footer {
+        text-align: center;
+
+        font-size: 15px;
+
+        color: var(--muted);
+      }
+
+      .fade {
+        opacity: 0;
+
+        transform: translateY(12px);
+
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+
+      .fade.show {
+        opacity: 1;
+
+        transform: none;
+      }
+
+      @media (min-width: 640px) {
+        .avatar {
+          width: 128px;
+          height: 128px;
+
+          font-size: 2.5rem;
+        }
+
+        .cards {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+
+          transition: none !important;
+
+          scroll-behavior: auto !important;
+        }
+
+        .fade {
+          opacity: 1 !important;
+
+          transform: none !important;
+        }
+      }
+
+      .rubric-card {
+        background: #fff;
+
+        border-radius: 22px;
+
+        overflow: hidden;
+
+        border: 1px solid var(--border);
+
+        box-shadow: var(--shadow);
+      }
+
+      .rubric-table {
+        width: 100%;
+
+        border-collapse: collapse;
+      }
+
+      .rubric-table thead {
+        background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+
+        color: #fff;
+      }
+
+      .rubric-table th {
+        padding: 18px;
+
+        text-align: left;
+
+        font-size: 16px;
+
+        font-weight: 700;
+      }
+
+      .rubric-table td {
+        padding: 18px;
+
+        border-bottom: 1px solid #e5e7eb;
+
+        vertical-align: top;
+      }
+
+      .rubric-table td:last-child {
+        text-align: center;
+
+        font-weight: 700;
+
+        color: var(--primary);
+
+        width: 90px;
+      }
+
+      .rubric-table tfoot {
+        background: #f8fafc;
+
+        font-weight: 700;
+      }
+
+      .rubric-table tfoot td {
+        border-bottom: none;
+
+        font-size: 17px;
+      }
+
+      .rubric-note {
+        padding: 20px;
+
+        font-style: italic;
+
+        color: var(--muted);
+      }
+
+      @media (max-width: 640px) {
+        .rubric-table th,
+        .rubric-table td {
+          padding: 14px;
+
+          font-size: 14px;
+        }
+      }
+
+      .reflection-grid {
+        display: grid;
+
+        gap: 22px;
+      }
+
+      .reflection-card {
+        position: relative;
+
+        background: #fff;
+
+        padding: 28px 28px 28px 80px;
+
+        border-radius: 22px;
+
+        border: 1px solid var(--border);
+
+        box-shadow: var(--shadow);
+
+        transition: 0.25s ease;
+      }
+
+      .reflection-number {
+        position: absolute;
+
+        left: 24px;
+        top: 26px;
+
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+
+        background: linear-gradient(135deg, var(--primary), #3b82f6);
+
+        color: #fff;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 700;
+
+        font-size: 18px;
+      }
+
+      .reflection-card h3 {
+        margin-bottom: 10px;
+
+        font-size: 1.15rem;
+
+        color: var(--primary-dark);
+      }
+
+      .reflection-card p {
+        color: var(--muted);
+
+        line-height: 1.7;
+      }
+
+      @media (hover: hover) {
+        .reflection-card:hover {
+          transform: translateY(-6px);
+
+          box-shadow: 0 22px 40px rgba(29, 78, 216, 0.15);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .reflection-card {
+          padding: 22px;
+        }
+
+        .reflection-number {
+          position: static;
+
+          margin-bottom: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="fade">
+      <div class="container hero">
+        <div class="avatar" role="img" aria-label="Aswad Khan">AK</div>
+
+        <h1>Aswad Khan</h1>
+
+        <p>
+          A motivated 10th-grade student who enjoys learning, solving problems,
+          and helping in the family business.
+        </p>
+
+        <div class="hero-chips">
+          <div class="chip">10th Grade</div>
+
+          <div class="chip">Anees Hassan School &amp; College</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="fade">
+      <div class="container">
+        <div class="section-label">Education</div>
+
+        <h2>Education</h2>
+
+        <div class="info-card">
+          <div class="info-item">
+            <span class="label"> Grade </span>
+
+            <p>10th Grade</p>
+          </div>
+
+          <div class="info-item">
+            <span class="label"> School </span>
+
+            <p>Anees Hassan School &amp; College</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade">
+      <div class="container">
+        <div class="section-label">3 Things I'm Proud Of</div>
+
+        <h2>Things I'm Proud Of</h2>
+
+        <div class="cards">
+          <article class="proud-card">
+            Balancing my studies while helping my father in his business.
+          </article>
+
+          <article class="proud-card">
+            Finding creative solutions to everyday challenges.
+          </article>
+
+          <article class="proud-card">
+            Managing my time effectively and completing tasks early.
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade">
+      <div class="container">
+        <div class="section-label">Skills</div>
+
+        <h2>Skills</h2>
+
+        <div class="badges">
+          <div class="badge">Business Operations</div>
+
+          <div class="badge">Drawing</div>
+
+          <div class="badge">Problem Solving</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade">
+      <div class="container">
+        <div class="section-label">My Dream</div>
+
+        <h2>My Dream</h2>
+
+        <div class="quote">
+          <p>
+            I am working hard to become a future entrepreneur. Helping my father
+            run his business today is teaching me the operations and management
+            skills I need to launch my own company.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade">
+      <div class="container">
+        <div class="section-label">Assignment</div>
+
+        <h2>Assignment Grading Rubric</h2>
+
+        <div class="rubric-card">
+          <table class="rubric-table">
+            <thead>
+              <tr>
+                <th>Criteria</th>
+                <th>Marks</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  Specification is complete — Goal, Requirements, Hard
+                  Constraints and Out of Scope are included.
+                </td>
+                <td>3</td>
+              </tr>
+
+              <tr>
+                <td>
+                  Specification reviewed by AI and improved to a score of 9+/10.
+                </td>
+                <td>2</td>
+              </tr>
+
+              <tr>
+                <td>
+                  Correct Markdown formatting is used throughout the
+                  specification.
+                </td>
+                <td>2</td>
+              </tr>
+
+              <tr>
+                <td>Working portfolio link submitted.</td>
+                <td>2</td>
+              </tr>
+
+              <tr>
+                <td>Reflection section completed.</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td>10</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <p class="rubric-note">
+            This rubric shows how my portfolio assignment is evaluated.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade">
+      <div class="container">
+        <div class="section-label">Reflection</div>
+
+        <h2>My Reflection</h2>
+
+        <div class="reflection-grid">
+          <article class="reflection-card">
+            <div class="reflection-number">1</div>
+
+            <h3>What was Markdown?</h3>
+
+            <p>
+              Markdown is a simple text formatting language that I used to write
+              my portfolio specification with headings, lists, and structured
+              content.
+            </p>
+          </article>
+
+          <article class="reflection-card">
+            <div class="reflection-number">2</div>
+
+            <h3>What was HTML?</h3>
+
+            <p>
+              HTML is the language used to build my portfolio website by
+              converting my written specification into a complete web page.
+            </p>
+          </article>
+
+          <article class="reflection-card">
+            <div class="reflection-number">3</div>
+
+            <h3>What did AI do?</h3>
+
+            <p>
+              AI helped me improve my specification, generate the HTML, and
+              build a clean, modern portfolio while following the project
+              requirements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="fade">
+      <div class="container">Built with ♥ by Aswad Khan · 2026</div>
+    </footer>
+
+    <script>
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!reduceMotion) {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+
+          {
+            threshold: 0.15,
+
+            rootMargin: "0px 0px -10% 0px",
+          },
+        );
+
+        document
+          .querySelectorAll(".fade")
+          .forEach((el) => observer.observe(el));
+      } else {
+        document
+          .querySelectorAll(".fade")
+          .forEach((el) => el.classList.add("show"));
+      }
+    </script>
+  </body>
+</html>
